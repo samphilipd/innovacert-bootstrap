@@ -10,6 +10,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-sass'
 gem 'haml-rails'
 gem 'high_voltage'
+gem 'pg'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :mri_21, :rbx]
@@ -17,15 +18,13 @@ group :development do
 #  gem 'quiet_assets' ## turn on if server log gets too verbose
   gem 'rails_layout'
   gem 'spring'
-  gem 'sqlite3'
 end
 group :development, :test do
   gem 'thin'
-  gem 'sqlite3'
 end
 group :production do
   gem 'unicorn'
-  gem 'pg'
+  gem 'rails_12factor'
 end
 group :doc do
   gem 'sdoc', '~> 0.4.0',          group: :doc
