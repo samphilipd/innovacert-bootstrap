@@ -18,8 +18,6 @@ group :development do
 #  gem 'quiet_assets' ## turn on if server log gets too verbose
   gem 'rails_layout'
   gem 'spring'
-end
-group :development, :test do
   gem 'thin'
 end
 group :production do
