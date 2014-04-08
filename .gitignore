@@ -79,5 +79,5 @@ pickle-email-*.html
 .env
 .powenv
 
-# Rails secrets file
-/config/secrets.yml
+# Ignore application configuration
+/config/application.yml

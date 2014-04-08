@@ -11,6 +11,7 @@ gem 'bootstrap-sass'
 gem 'haml-rails'
 gem 'high_voltage'
 gem 'pg'
+gem 'figaro', github: 'laserlemon/figaro', ref: "9bbc7343f3916e73c185d071608e5ef24e9638d0"
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :mri_21, :rbx]
@@ -25,5 +26,5 @@ group :production do
   gem 'rails_12factor'
 end
 group :doc do
-  gem 'sdoc', '~> 0.4.0',          group: :doc
+  gem 'sdoc', '~> 0.4.0'
 end
