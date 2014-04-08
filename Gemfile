@@ -23,7 +23,7 @@ group :development, :test do
   gem 'thin'
 end
 group :production do
-  gem 'unicorn'
+  gem 'thin'
   gem 'rails_12factor'
 end
 group :doc do
