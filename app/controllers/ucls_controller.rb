@@ -1,6 +1,6 @@
 class UclsController < ApplicationController
 
-  # GET /ucls/index
+  # GET /ucls
   def index
     @ucls = Ucl.all
   end

@@ -1,2 +1,21 @@
-%h1 Workers#index
-%p Find me in app/views/workers/index.html.haml
+%h1 List of Workers
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th RUT
+      %th Certified UCLs
+      -# 3.times do
+        = content_tag :th, ''
+  %tbody
+    - @workers.each do |worker|
+      %tr
+        %td= worker.name
+        %td= worker.rut
+        %td
+          - unless worker.ucls.count == 0
+            %ul
+              - worker.ucls.each do |ucl|
+                %li= link_to "#{ucl.code}", '/to/be/implemented/' #show_ucl_path(ucl)
+
