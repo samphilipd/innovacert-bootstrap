@@ -1,0 +1,17 @@
+%h1 List of UCLs
+
+%table
+  %thead
+    %tr
+      %th Code
+      %th Name
+      %th Description
+      -# 3.times do
+        = content_tag :th, ''
+  %tbody
+    - @ucls.each do |ucl|
+      %tr
+        %td= ucl.code
+        %td= ucl.name
+        %td= ucl.description
+
