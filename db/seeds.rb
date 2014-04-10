@@ -1,15 +1,9 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
+### WARNING
+### running rake db:seed using this file will DESTROY ALL CURRENT DATA IN THE DATABASE
 ###
 
-# empty join tables
-#Worker.ucl.delete_all
+### DO NOT RUN ON PRODUCTION DATABASE ###
+
 # . . .
 # Seed example UCLs
 Ucl.destroy_all
@@ -58,5 +52,11 @@ rodrigo = Worker.create!(name: 'Rodrigo',
 # rodrigo is pedro's assistant and a certified ayudante
 rodrigo.ucls << Ucl.where(code: ['MT001', 'MPSO003', 'MPSO002'])
 
+# . . .
 # TODO add table for profiles
+
+# . . .
+# Seed example instruments
+Instrument.destroy_all
+Ucl.find_by(code: 'MT001').instruments.create!(name: 'Instrumento para MT001')
 

@@ -1,17 +1,20 @@
 %h1 List of UCLs
 
-%table
+%table.table.table-striped
   %thead
     %tr
       %th Code
       %th Name
       %th Description
-      -# 3.times do
-        = content_tag :th, ''
+      %th Available Instruments
   %tbody
     - @ucls.each do |ucl|
       %tr
         %td= ucl.code
         %td= ucl.name
         %td= ucl.description
-
+        %td
+          - unless ucl.instruments.count == 0
+            %ul
+              - ucl.instruments.each do |instrument|
+                %li= link_to "#{instrument.name}", '/to/be/implemented'

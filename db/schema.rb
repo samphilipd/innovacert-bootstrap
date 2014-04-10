@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140409124943) do
+ActiveRecord::Schema.define(version: 20140410143525) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "instruments", force: true do |t|
+    t.string   "name"
+    t.integer  "ucls_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "ucl_id"
+  end
 
   create_table "ucls", force: true do |t|
     t.string   "code"
@@ -25,9 +33,12 @@ ActiveRecord::Schema.define(version: 20140409124943) do
   end
 
   create_table "ucls_workers", id: false, force: true do |t|
-    t.integer "ucl_id"
-    t.integer "worker_id"
+    t.integer "ucl_id",    null: false
+    t.integer "worker_id", null: false
   end
+
+  add_index "ucls_workers", ["ucl_id"], name: "index_ucls_workers_on_ucl_id", using: :btree
+  add_index "ucls_workers", ["worker_id"], name: "index_ucls_workers_on_worker_id", using: :btree
 
   create_table "workers", force: true do |t|
     t.string   "name"
