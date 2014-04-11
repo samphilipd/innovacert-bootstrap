@@ -1,9 +1,8 @@
 %h3 Create a new Instrument
 
 %section
-%p Select UCL for this instrument:
 .form
   = bootstrap_form_for @instrument do |f|
-    = f.select :ucl, options_for_select(Ucl.options_for_select)
-    = f.text_field :name
+    = f.select :ucl_id, options_for_select(Ucl.options_for_select), label: 'Select UCL for this instrument'
+    = f.text_field :name, label: 'Instrument name'
     = f.submit
