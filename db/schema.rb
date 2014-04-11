@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 20140410143525) do
 
   create_table "instruments", force: true do |t|
     t.string   "name"
-    t.integer  "ucls_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "ucl_id"
