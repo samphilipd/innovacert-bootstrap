@@ -3,4 +3,6 @@ RailsBootstrap::Application.routes.draw do
 
   get 'ucls' => 'ucls#index', as: :ucls
   root :to => 'visitors#new'
+
+  resources :instruments, only: [:new, :create]
 end
