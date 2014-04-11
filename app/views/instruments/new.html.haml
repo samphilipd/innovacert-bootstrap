@@ -2,7 +2,8 @@
 
 %section
 %p Select UCL for this instrument:
-%br
+.form
   = bootstrap_form_for @instrument do |f|
+    = f.select :ucl, options_for_select(Ucl.options_for_select)
     = f.text_field :name
     = f.submit
