@@ -168,6 +168,7 @@ DEPENDENCIES
   haml-rails
   high_voltage
   html2haml
+  i18n
   jbuilder (~> 2.0)
   jquery-rails
   pg
