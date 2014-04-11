@@ -12,7 +12,7 @@ gem 'haml-rails'
 gem 'high_voltage'
 gem 'pg'
 gem 'figaro', github: 'laserlemon/figaro', ref: "9bbc7343f3916e73c185d071608e5ef24e9638d0" # specific version needed for compatibility with rails 4.10.rc2
-
+gem 'bootstrap_form'
 # I18n support
 gem 'i18n'
 

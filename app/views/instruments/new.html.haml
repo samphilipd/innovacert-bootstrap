@@ -3,7 +3,6 @@
 %section
 %p Select UCL for this instrument:
 %br
-  = simple_form_for @instrument, html: {class: 'form-horizontal'} do |f|
-    = f.input :name
-    = f.input :key_activities
-    = f.button :submit
+  = bootstrap_form_for @instrument do |f|
+    = f.text_field :name
+    = f.submit
