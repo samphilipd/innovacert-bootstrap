@@ -3,6 +3,10 @@ class Ucl < ActiveRecord::Base
   has_many :instruments, dependent: :destroy
 
   def self.options_for_select
-    Ucl.all.map{|s| [s.code.to_s + " - " + s.name, s.id] }
+    Ucl.all.map{|s| [s.human_readable_name, s.id] }
+  end
+
+  def human_readable_name
+    code.to_s + " - " + name
   end
 end

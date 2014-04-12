@@ -1,0 +1,15 @@
+%h3 Showing Instrument
+
+%section
+  .column
+    %strong Instrument name:
+    %ul
+      %li= @instrument.name
+    %strong UCL:
+    %ul
+      %li= @instrument.ucl.human_readable_name
+    %strong Observation questions
+    - unless @instrument.observation_questions.count == 0
+      %ol
+      - @instrument.observation_questions.each do |q|
+        %li= q.content
