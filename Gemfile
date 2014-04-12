@@ -17,6 +17,8 @@ gem 'bootstrap_form'
 gem 'i18n'
 
 group :development do
+  gem 'rspec'
+  gem 'factory_girl'
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :mri_21, :rbx]
   gem 'html2haml'
