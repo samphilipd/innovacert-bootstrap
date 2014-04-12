@@ -33,6 +33,9 @@ img {
   @extend .btn-primary;
   @extend .btn-lg;
   }
+.alert {
+  margin-top: 10px; // add small gap between alerts and navbar
+}
 // apply styles to HTML elements
 // to make views framework-neutral
 main {
@@ -40,7 +43,7 @@ main {
   background-color: #ddd;
   padding-bottom: 80px;
   width: 100%;
-  margin-top: 51px; // accommodate the navbar
+  margin-top: 60px; // accommodate the navbar
   }
 section {
   @extend .row;
