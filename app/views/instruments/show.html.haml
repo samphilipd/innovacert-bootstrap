@@ -11,5 +11,5 @@
     %strong Observation questions
     - unless @instrument.observation_questions.count == 0
       %ol
-      - @instrument.observation_questions.each do |q|
-        %li= q.content
+        - @instrument.observation_questions.each do |q|
+          %li= q.content
