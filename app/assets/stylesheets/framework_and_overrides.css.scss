@@ -33,6 +33,12 @@ img {
   @extend .btn-primary;
   @extend .btn-lg;
   }
+.button {
+  @extend .btn;
+  @extend .btn-default;
+  margin: 1em;
+  float: left;
+}
 .alert {
   margin-top: 10px; // add small gap between alerts and navbar
 }

@@ -13,3 +13,7 @@
       %ol
         - @instrument.observation_questions.each do |q|
           %li= q.content
+%section
+  .column
+    = button_to 'Edit Instrument', edit_instrument_path(@instrument), class: 'button', method: :get
+    = button_to 'Delete Instrument', instrument_path(@instrument), class: 'button', method: :delete, data: {confirm: 'Really delete this instrument?'}

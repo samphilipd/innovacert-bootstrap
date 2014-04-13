@@ -1,0 +1,9 @@
+= bootstrap_form_for @instrument do |f|
+  = f.select :ucl_id, options_for_select(Ucl.options_for_select), label: 'Select UCL for this instrument'
+  %p
+    = f.text_field :name, label: 'Instrument name'
+  = f.fields_for :observation_questions do |builder|
+    %p
+      = builder.text_area :content, rows: 3, label: 'Question'
+  %p
+    = f.submit "Save Instrument"
