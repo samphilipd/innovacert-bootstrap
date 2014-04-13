@@ -46,7 +46,7 @@ class InstrumentsController < ApplicationController
   private
   # Never trust parameters from the scary internet, only allow the white list through.
   def instrument_params
-    params.require(:instrument).permit(:name, :ucl_id, observation_questions_attributes: [:id, :content])
+    params.require(:instrument).permit(:name, :ucl_id, observation_questions_attributes: [:id, :content, :_destroy])
   end
 
   def set_instrument
