@@ -1,5 +1,5 @@
 class InstrumentsController < ApplicationController
-  before_action :set_instrument, only: [:edit, :show, :destroy]
+  before_action :set_instrument, only: [:edit, :show, :destroy, :update]
 
   # GET /instruments/1
   def show
@@ -7,6 +7,15 @@ class InstrumentsController < ApplicationController
 
   # GET /instruments/1/edit
   def edit
+  end
+
+  # PATCH/PUT /instruments/1
+  def update
+    if @instrument.update(instrument_params)
+      redirect_to @instrument, notice: 'Instrument was successfully updated.'
+    else
+      render action: 'edit'
+    end
   end
 
   # DELETE /instruments/1
