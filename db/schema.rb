@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140411130218) do
+ActiveRecord::Schema.define(version: 20140414131614) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,25 @@ ActiveRecord::Schema.define(version: 20140411130218) do
     t.text     "questionnaire"
     t.text     "observation"
   end
+
+  create_table "observation_questions", force: true do |t|
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "observation_section_id"
+  end
+
+  add_index "observation_questions", ["observation_section_id"], name: "index_observation_questions_on_observation_section_id", using: :btree
+
+  create_table "observation_sections", force: true do |t|
+    t.integer  "instrument_id"
+    t.integer  "section_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+  end
+
+  add_index "observation_sections", ["instrument_id"], name: "index_observation_sections_on_instrument_id", using: :btree
 
   create_table "ucls", force: true do |t|
     t.string   "code"

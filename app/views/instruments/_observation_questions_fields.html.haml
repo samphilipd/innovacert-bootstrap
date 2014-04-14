@@ -1,0 +1,4 @@
+= f.fields_for :observation_questions do |builder|
+  %li
+    = builder.text_area :content, label: 'Question:'
+    = builder.check_box :_destroy, label: 'Remove Question:'

@@ -11,15 +11,22 @@ img {
   font-size: inherit;
   }
 
+// Give labels some breathing space to the right before input field
+.control-label {
+  margin-right: 1em;
+}
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create your own classes
 // to make views framework-neutral
 .column {
+  @extend .col-md-6
+}
+.column-centered {
   @extend .col-md-6;
   @extend .text-center;
   }
 .form {
-  @extend .col-md-6;
+  @extend .col-md-9;
   }
 .form-centered {
   @extend .col-md-6;
@@ -30,6 +37,15 @@ img {
   @extend .btn-primary;
   @extend .btn-lg;
   }
+.button {
+  @extend .btn;
+  @extend .btn-default;
+  margin: 1em;
+  float: left;
+}
+.alert {
+  margin-top: 10px; // add small gap between alerts and navbar
+}
 // apply styles to HTML elements
 // to make views framework-neutral
 main {
@@ -37,7 +53,7 @@ main {
   background-color: #ddd;
   padding-bottom: 80px;
   width: 100%;
-  margin-top: 51px; // accommodate the navbar
+  margin-top: 60px; // accommodate the navbar
   }
 section {
   @extend .row;

@@ -1,0 +1,22 @@
+%h3 Showing Instrument
+
+%section
+  .column
+    %strong Instrument name:
+    %ul
+      %li= @instrument.name
+    %strong UCL:
+    %ul
+      %li= @instrument.ucl.human_readable_name
+    - if @instrument.observation_sections.count == 0 # todo move to model
+      %strong No Observation Sections
+    - else
+      %strong Observation Sections
+      %ol
+        - @instrument.observation_sections_ordered.each do |os|
+          %li= os.name
+          = render partial: 'observation_questions_view', locals: {os: os}
+%section
+  .column
+    = button_to 'Edit Instrument', edit_instrument_path(@instrument), class: 'button', method: :get
+    = button_to 'Delete Instrument', instrument_path(@instrument), class: 'button', method: :delete, data: {confirm: 'Really delete this instrument?'}

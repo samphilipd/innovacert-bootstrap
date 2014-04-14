@@ -23,13 +23,13 @@ Ucl.create!(code: 'MPSO002',
             name: 'Colaborar en trabajos de sondaje',
             description: 'Certificar como preparar área y recursos de perforación, apoyar perforación y recepcionar testigo.')
 
-Ucl.create!(code: 'MPS003',
-            name: 'Mantener estado de herramientas de sondaje.',
+Ucl.create!(code: 'MPSO003',
+            name: 'Mantener estado de herramientas de sondaje',
             description: 'Certificar como mantener herramientas de sondaje y mantener herramientas de sondaje.')
 
 Ucl.create!(code: 'MPSO004',
             name: 'Controlar proceso de muestreo',
-            description: 'TODO: write description here')
+            description: 'Certificar como controlar el proceso de muestreo.')
 
 # . . .
 # Seed example workers
@@ -58,5 +58,7 @@ rodrigo.ucls << Ucl.where(code: ['MT001', 'MPSO003', 'MPSO002'])
 # . . .
 # Seed example instruments
 Instrument.destroy_all
-Ucl.find_by(code: 'MT001').instruments.create!(name: 'Instrumento para MT001')
-
+instrument = Ucl.find_by(code: 'MT001').instruments.create!(name: 'Instrumento para MT001')
+instrument.observation_sections << ObservationSection.new(name: "Perform pre-operational check of equipment, checking wear elements, structures, tires and components, technical specifications, standards and procedures", section_number: 1)
+instrument.observation_sections << ObservationSection.new(name: "Ensures information regarding the work to be performed (type of work and areas) with the head of sector, according to company procedures", section_number: 2)
+instrument.observation_sections << ObservationSection.new(name: "It supplies fuel according to specific procedures of the company", section_number: 3)
