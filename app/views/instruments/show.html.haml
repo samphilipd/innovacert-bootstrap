@@ -15,10 +15,7 @@
       %ol
         - @instrument.observation_sections_ordered.each do |os|
           %li= os.name
-          = binding.pry
-          %ol
-            - os.observation_questions.each do |oq|
-              %li= oq.content
+          = render partial: 'observation_questions_view', locals: {os: os}
 %section
   .column
     = button_to 'Edit Instrument', edit_instrument_path(@instrument), class: 'button', method: :get
