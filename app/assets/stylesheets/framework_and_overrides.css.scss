@@ -11,6 +11,10 @@ img {
   font-size: inherit;
   }
 
+// Give labels some breathing space to the right before input field
+.control-label {
+  margin-right: 1em;
+}
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create your own classes
 // to make views framework-neutral
@@ -22,7 +26,7 @@ img {
   @extend .text-center;
   }
 .form {
-  @extend .col-md-6;
+  @extend .col-md-9;
   }
 .form-centered {
   @extend .col-md-6;

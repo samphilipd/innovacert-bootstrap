@@ -1,10 +1,12 @@
 = bootstrap_form_for @instrument do |f|
-  = f.select :ucl_id, options_for_select(Ucl.options_for_select), label: 'Select UCL for this instrument'
+  = f.select :ucl_id, options_for_select(Ucl.options_for_select), label: 'Select UCL for this instrument:'
   %p
-    = f.text_field :name, label: 'Instrument name'
-  = f.fields_for :observation_questions do |builder|
-    %p
-      = builder.text_area :content, rows: 3, label: 'Question'
-      = builder.check_box :_destroy, label: 'Remove Question'
+    = f.text_field :name, label: 'Instrument name:'
+  %h4 Observation Section
+  %ol
+    = f.fields_for :observation_sections, f.object.observation_sections_ordered do |builder|
+      %li
+        = builder.text_area :name, rows: 3, label: 'Section name:'
+        = builder.check_box :_destroy, label: 'Remove Section:'
   %p
     = f.submit "Save Instrument"

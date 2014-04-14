@@ -28,7 +28,7 @@ class InstrumentsController < ApplicationController
   # GET /instruments/new
   def new
     @instrument = Instrument.new
-    3.times { @instrument.observation_questions.build } # start with 3 empty question fields
+    3.times { @instrument.observation_sections.build } # start with 3 empty section fields
   end
 
   # POST /instruments
@@ -46,7 +46,7 @@ class InstrumentsController < ApplicationController
   private
   # Never trust parameters from the scary internet, only allow the white list through.
   def instrument_params
-    params.require(:instrument).permit(:name, :ucl_id, observation_questions_attributes: [:id, :content, :_destroy])
+    params.require(:instrument).permit(:name, :ucl_id, observation_sections_attributes: [:id, :name, :_destroy])
   end
 
   def set_instrument

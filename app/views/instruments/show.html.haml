@@ -8,11 +8,11 @@
     %strong UCL:
     %ul
       %li= @instrument.ucl.human_readable_name
-    %strong Observation questions
-    - unless @instrument.observation_questions.count == 0
+    %strong Observation Sections
+    - unless @instrument.observation_sections.count == 0
       %ol
-        - @instrument.observation_questions.each do |q|
-          %li= q.content
+        - @instrument.observation_sections_ordered.each do |s|
+          %li= s.name
 %section
   .column
     = button_to 'Edit Instrument', edit_instrument_path(@instrument), class: 'button', method: :get

@@ -59,4 +59,6 @@ rodrigo.ucls << Ucl.where(code: ['MT001', 'MPSO003', 'MPSO002'])
 # Seed example instruments
 Instrument.destroy_all
 instrument = Ucl.find_by(code: 'MT001').instruments.create!(name: 'Instrumento para MT001')
-instrument.observation_questions << [ObservationQuestion.new(content: "Check tires", section: 1, number: 1), ObservationQuestion.new(content: "Check sheet", section: 1, number: 2), ObservationQuestion.new(content: "Check the yoke pin", section: 1, number: 3)]
+instrument.observation_sections << ObservationSection.new(name: "Perform pre-operational check of equipment, checking wear elements, structures, tires and components, technical specifications, standards and procedures", section_number: 1)
+instrument.observation_sections << ObservationSection.new(name: "Ensures information regarding the work to be performed (type of work and areas) with the head of sector, according to company procedures", section_number: 2)
+instrument.observation_sections << ObservationSection.new(name: "It supplies fuel according to specific procedures of the company", section_number: 3)
