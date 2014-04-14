@@ -8,8 +8,10 @@
     %strong UCL:
     %ul
       %li= @instrument.ucl.human_readable_name
-    %strong Observation Sections
-    - unless @instrument.observation_sections.count == 0
+    - if @instrument.observation_sections.count == 0 # todo move to model
+      %strong No Observation Sections
+    - else
+      %strong Observation Sections
       %ol
         - @instrument.observation_sections_ordered.each do |s|
           %li= s.name

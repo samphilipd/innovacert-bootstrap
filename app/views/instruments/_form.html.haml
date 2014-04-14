@@ -3,6 +3,7 @@
   %p
     = f.text_field :name, label: 'Instrument name:'
   %h4 Observation Section
+  -# fixme does not allow questions to be added if none exist yet
   %ol
     = f.fields_for :observation_sections, f.object.observation_sections_ordered do |builder|
       %li
