@@ -13,8 +13,12 @@
     - else
       %strong Observation Sections
       %ol
-        - @instrument.observation_sections_ordered.each do |s|
-          %li= s.name
+        - @instrument.observation_sections_ordered.each do |os|
+          %li= os.name
+          = binding.pry
+          %ol
+            - os.observation_questions.each do |oq|
+              %li= oq.content
 %section
   .column
     = button_to 'Edit Instrument', edit_instrument_path(@instrument), class: 'button', method: :get
