@@ -1,0 +1,6 @@
+= f.fields_for :observation_sections, f.object.observation_sections_ordered do |builder|
+  %li
+    = builder.text_area :name, rows: 3, label: 'Section name:'
+    = builder.check_box :_destroy, label: 'Remove Section:'
+    %ol
+      = render partial: 'observation_question_fields', locals: {f: builder}

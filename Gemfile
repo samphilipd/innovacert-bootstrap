@@ -17,6 +17,7 @@ gem 'bootstrap_form'
 gem 'i18n'
 
 group :development do
+  gem 'pry'
   gem 'rspec'
   gem 'factory_girl'
   gem 'better_errors'

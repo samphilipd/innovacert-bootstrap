@@ -1,7 +1,6 @@
 = bootstrap_form_for @instrument do |f|
   = f.select :ucl_id, options_for_select(Ucl.options_for_select), label: 'Select UCL for this instrument:'
-  %p
-    = f.text_field :name, label: 'Instrument name:'
+  =f.text_field :name, label: 'Instrument name:'
   %h4 Observation Section
   -# fixme does not allow questions to be added if none exist yet
   %ol
@@ -9,5 +8,7 @@
       %li
         = builder.text_area :name, rows: 3, label: 'Section name:'
         = builder.check_box :_destroy, label: 'Remove Section:'
+        %ol
+          = render partial: 'observation_question_fields', locals: {f: builder}
   %p
     = f.submit "Save Instrument"

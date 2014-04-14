@@ -28,7 +28,10 @@ class InstrumentsController < ApplicationController
   # GET /instruments/new
   def new
     @instrument = Instrument.new
-    3.times { @instrument.observation_sections.build } # start with 3 empty section fields
+    3.times do
+      observation_section = @instrument.observation_sections.build # start with 3 empty section fields
+      4.times { observation_section.observation_questions.build }
+    end
   end
 
   # POST /instruments
