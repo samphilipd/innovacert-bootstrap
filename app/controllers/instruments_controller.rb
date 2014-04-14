@@ -28,6 +28,9 @@ class InstrumentsController < ApplicationController
   # GET /instruments/new
   def new
     @instrument = Instrument.new
+    #TODO replace this hack with the ability to dynamically add/delete questions/sections,
+    # preferably using javascript
+    # consider cocoon?
     3.times do
       observation_section = @instrument.observation_sections.build # start with 3 empty section fields
       4.times { observation_section.observation_questions.build }
