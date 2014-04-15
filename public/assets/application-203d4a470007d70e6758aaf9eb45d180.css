@@ -351,9 +351,10 @@ th {
   }
 
   /* line 246, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-  .btn > .caret, .submit > .caret,
+  .btn > .caret, .submit > .caret, .button > .caret,
   .dropup > .btn > .caret,
-  .dropup > .submit > .caret {
+  .dropup > .submit > .caret,
+  .dropup > .button > .caret {
     border-top-color: #000 !important;
   }
 
@@ -678,7 +679,7 @@ cite {
 }
 
 /* line 495, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.text-center, .column, .form-centered {
+.text-center, .column-centered, .form-centered {
   text-align: center;
 }
 
@@ -1062,7 +1063,7 @@ pre code {
 }
 
 /* line 767, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .column, .form, .form-centered, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .column, .column-centered, .form-centered, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .form, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -1592,7 +1593,7 @@ pre code {
 }
 @media (min-width: 992px) {
   /* line 1088, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .column, .form, .form-centered, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .column, .column-centered, .form-centered, .col-md-7, .col-md-8, .col-md-9, .form, .col-md-10, .col-md-11, .col-md-12 {
     float: left;
   }
 
@@ -1612,7 +1613,7 @@ pre code {
   }
 
   /* line 1100, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-  .col-md-9 {
+  .col-md-9, .form {
     width: 75%;
   }
 
@@ -1627,7 +1628,7 @@ pre code {
   }
 
   /* line 1109, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-  .col-md-6, .column, .form, .form-centered {
+  .col-md-6, .column, .column-centered, .form-centered {
     width: 50%;
   }
 
@@ -2898,7 +2899,7 @@ select[multiple].input-lg {
 }
 
 /* line 1993, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.btn, .submit {
+.btn, .submit, .button {
   display: inline-block;
   margin-bottom: 0;
   font-weight: normal;
@@ -2919,28 +2920,32 @@ select[multiple].input-lg {
 }
 
 /* line 2014, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.btn:focus, .submit:focus,
+.btn:focus, .submit:focus, .button:focus,
 .btn:active:focus,
 .submit:active:focus,
+.button:active:focus,
 .btn.active:focus,
-.active.submit:focus {
+.active.submit:focus,
+.active.button:focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
 
 /* line 2020, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.btn:hover, .submit:hover,
+.btn:hover, .submit:hover, .button:hover,
 .btn:focus,
-.submit:focus {
+.submit:focus,
+.button:focus {
   color: #ffffff;
   text-decoration: none;
 }
 
 /* line 2025, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.btn:active, .submit:active,
+.btn:active, .submit:active, .button:active,
 .btn.active,
-.active.submit {
+.active.submit,
+.active.button {
   outline: 0;
   background-image: none;
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
@@ -2948,11 +2953,13 @@ select[multiple].input-lg {
 }
 
 /* line 2033, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.btn.disabled, .disabled.submit,
+.btn.disabled, .disabled.submit, .disabled.button,
 .btn[disabled],
 [disabled].submit,
+[disabled].button,
 fieldset[disabled] .btn,
-fieldset[disabled] .submit {
+fieldset[disabled] .submit,
+fieldset[disabled] .button {
   cursor: not-allowed;
   pointer-events: none;
   opacity: 0.65;
@@ -2962,52 +2969,72 @@ fieldset[disabled] .submit {
 }
 
 /* line 2041, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.btn-default {
+.btn-default, .button {
   color: #ffffff;
   background-color: #95a5a6;
   border-color: #95a5a6;
 }
 
 /* line 2050, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.btn-default:hover,
+.btn-default:hover, .button:hover,
 .btn-default:focus,
+.button:focus,
 .btn-default:active,
+.button:active,
 .btn-default.active,
-.open .dropdown-toggle.btn-default {
+.active.button,
+.open .dropdown-toggle.btn-default,
+.open .dropdown-toggle.button {
   color: #ffffff;
   background-color: #7f9293;
   border-color: #74898a;
 }
 
 /* line 2057, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.btn-default:active,
+.btn-default:active, .button:active,
 .btn-default.active,
-.open .dropdown-toggle.btn-default {
+.active.button,
+.open .dropdown-toggle.btn-default,
+.open .dropdown-toggle.button {
   background-image: none;
 }
 
 /* line 2074, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.btn-default.disabled,
+.btn-default.disabled, .disabled.button,
 .btn-default[disabled],
+[disabled].button,
 fieldset[disabled] .btn-default,
+fieldset[disabled] .button,
 .btn-default.disabled:hover,
+.disabled.button:hover,
 .btn-default[disabled]:hover,
+[disabled].button:hover,
 fieldset[disabled] .btn-default:hover,
+fieldset[disabled] .button:hover,
 .btn-default.disabled:focus,
+.disabled.button:focus,
 .btn-default[disabled]:focus,
+[disabled].button:focus,
 fieldset[disabled] .btn-default:focus,
+fieldset[disabled] .button:focus,
 .btn-default.disabled:active,
+.disabled.button:active,
 .btn-default[disabled]:active,
+[disabled].button:active,
 fieldset[disabled] .btn-default:active,
+fieldset[disabled] .button:active,
 .btn-default.disabled.active,
+.disabled.active.button,
 .btn-default[disabled].active,
-fieldset[disabled] .btn-default.active {
+[disabled].active.button,
+fieldset[disabled] .btn-default.active,
+fieldset[disabled] .active.button {
   background-color: #95a5a6;
   border-color: #95a5a6;
 }
 
 /* line 2078, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.btn-default .badge {
+.btn-default .badge, .button .badge {
   color: #95a5a6;
   background-color: #ffffff;
 }
@@ -3333,7 +3360,8 @@ fieldset[disabled] .btn-link:focus {
 /* line 2321, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
 .btn-lg, .submit,
 .btn-group-lg > .btn,
-.btn-group-lg > .submit {
+.btn-group-lg > .submit,
+.btn-group-lg > .button {
   padding: 18px 27px;
   font-size: 19px;
   line-height: 1.33;
@@ -3343,7 +3371,8 @@ fieldset[disabled] .btn-link:focus {
 /* line 2328, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
 .btn-sm,
 .btn-group-sm > .btn,
-.btn-group-sm > .submit {
+.btn-group-sm > .submit,
+.btn-group-sm > .button {
   padding: 6px 9px;
   font-size: 13px;
   line-height: 1.5;
@@ -3353,7 +3382,8 @@ fieldset[disabled] .btn-link:focus {
 /* line 2335, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
 .btn-xs,
 .btn-group-xs > .btn,
-.btn-group-xs > .submit {
+.btn-group-xs > .submit,
+.btn-group-xs > .button {
   padding: 1px 5px;
   font-size: 13px;
   line-height: 1.5;
@@ -4619,45 +4649,56 @@ input[type="button"].btn-block {
 }
 
 /* line 3136, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.btn-group > .btn, .btn-group > .submit,
+.btn-group > .btn, .btn-group > .submit, .btn-group > .button,
 .btn-group-vertical > .btn,
-.btn-group-vertical > .submit {
+.btn-group-vertical > .submit,
+.btn-group-vertical > .button {
   position: relative;
   float: left;
 }
 
 /* line 3147, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.btn-group > .btn:hover, .btn-group > .submit:hover,
+.btn-group > .btn:hover, .btn-group > .submit:hover, .btn-group > .button:hover,
 .btn-group-vertical > .btn:hover,
 .btn-group-vertical > .submit:hover,
+.btn-group-vertical > .button:hover,
 .btn-group > .btn:focus,
 .btn-group > .submit:focus,
+.btn-group > .button:focus,
 .btn-group-vertical > .btn:focus,
 .btn-group-vertical > .submit:focus,
+.btn-group-vertical > .button:focus,
 .btn-group > .btn:active,
 .btn-group > .submit:active,
+.btn-group > .button:active,
 .btn-group-vertical > .btn:active,
 .btn-group-vertical > .submit:active,
+.btn-group-vertical > .button:active,
 .btn-group > .btn.active,
 .btn-group > .active.submit,
+.btn-group > .active.button,
 .btn-group-vertical > .btn.active,
-.btn-group-vertical > .active.submit {
+.btn-group-vertical > .active.submit,
+.btn-group-vertical > .active.button {
   z-index: 2;
 }
 
 /* line 3151, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.btn-group > .btn:focus, .btn-group > .submit:focus,
+.btn-group > .btn:focus, .btn-group > .submit:focus, .btn-group > .button:focus,
 .btn-group-vertical > .btn:focus,
-.btn-group-vertical > .submit:focus {
+.btn-group-vertical > .submit:focus,
+.btn-group-vertical > .button:focus {
   outline: none;
 }
 
 /* line 3157, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.btn-group .btn + .btn, .btn-group .submit + .btn, .btn-group .btn + .submit, .btn-group .submit + .submit,
+.btn-group .btn + .btn, .btn-group .submit + .btn, .btn-group .button + .btn, .btn-group .btn + .submit, .btn-group .submit + .submit, .btn-group .button + .submit, .btn-group .btn + .button, .btn-group .submit + .button, .btn-group .button + .button,
 .btn-group .btn + .btn-group,
 .btn-group .submit + .btn-group,
+.btn-group .button + .btn-group,
 .btn-group .btn-group + .btn,
 .btn-group .btn-group + .submit,
+.btn-group .btn-group + .button,
 .btn-group .btn-group + .btn-group {
   margin-left: -1px;
 }
@@ -4674,30 +4715,30 @@ input[type="button"].btn-block {
 }
 
 /* line 3169, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.btn-toolbar > .btn, .btn-toolbar > .submit,
+.btn-toolbar > .btn, .btn-toolbar > .submit, .btn-toolbar > .button,
 .btn-toolbar > .btn-group,
 .btn-toolbar > .input-group {
   margin-left: 5px;
 }
 
 /* line 3172, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > .submit:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > .submit:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > .button:not(:first-child):not(:last-child):not(.dropdown-toggle) {
   border-radius: 0;
 }
 
 /* line 3175, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.btn-group > .btn:first-child, .btn-group > .submit:first-child {
+.btn-group > .btn:first-child, .btn-group > .submit:first-child, .btn-group > .button:first-child {
   margin-left: 0;
 }
 
 /* line 3178, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > .submit:first-child:not(:last-child):not(.dropdown-toggle) {
+.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > .submit:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > .button:first-child:not(:last-child):not(.dropdown-toggle) {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
 
 /* line 3183, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.btn-group > .btn:last-child:not(:first-child), .btn-group > .submit:last-child:not(:first-child),
+.btn-group > .btn:last-child:not(:first-child), .btn-group > .submit:last-child:not(:first-child), .btn-group > .button:last-child:not(:first-child),
 .btn-group > .dropdown-toggle:not(:first-child) {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
@@ -4709,19 +4750,19 @@ input[type="button"].btn-block {
 }
 
 /* line 3190, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn, .btn-group > .btn-group:not(:first-child):not(:last-child) > .submit {
+.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn, .btn-group > .btn-group:not(:first-child):not(:last-child) > .submit, .btn-group > .btn-group:not(:first-child):not(:last-child) > .button {
   border-radius: 0;
 }
 
 /* line 3194, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.btn-group > .btn-group:first-child > .btn:last-child, .btn-group > .btn-group:first-child > .submit:last-child,
+.btn-group > .btn-group:first-child > .btn:last-child, .btn-group > .btn-group:first-child > .submit:last-child, .btn-group > .btn-group:first-child > .button:last-child,
 .btn-group > .btn-group:first-child > .dropdown-toggle {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
 
 /* line 3198, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.btn-group > .btn-group:last-child > .btn:first-child, .btn-group > .btn-group:last-child > .submit:first-child {
+.btn-group > .btn-group:last-child > .btn:first-child, .btn-group > .btn-group:last-child > .submit:first-child, .btn-group > .btn-group:last-child > .button:first-child {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
@@ -4733,7 +4774,7 @@ input[type="button"].btn-block {
 }
 
 /* line 3206, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.btn-group > .btn + .dropdown-toggle, .btn-group > .submit + .dropdown-toggle {
+.btn-group > .btn + .dropdown-toggle, .btn-group > .submit + .dropdown-toggle, .btn-group > .button + .dropdown-toggle {
   padding-left: 8px;
   padding-right: 8px;
 }
@@ -4757,7 +4798,7 @@ input[type="button"].btn-block {
 }
 
 /* line 3222, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.btn .caret, .submit .caret {
+.btn .caret, .submit .caret, .button .caret {
   margin-left: 0;
 }
 
@@ -4773,10 +4814,11 @@ input[type="button"].btn-block {
 }
 
 /* line 3234, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.btn-group-vertical > .btn, .btn-group-vertical > .submit,
+.btn-group-vertical > .btn, .btn-group-vertical > .submit, .btn-group-vertical > .button,
 .btn-group-vertical > .btn-group,
 .btn-group-vertical > .btn-group > .btn,
-.btn-group-vertical > .btn-group > .submit {
+.btn-group-vertical > .btn-group > .submit,
+.btn-group-vertical > .btn-group > .button {
   display: block;
   float: none;
   width: 100%;
@@ -4784,54 +4826,56 @@ input[type="button"].btn-block {
 }
 
 /* line 3240, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.btn-group-vertical > .btn-group > .btn, .btn-group-vertical > .btn-group > .submit {
+.btn-group-vertical > .btn-group > .btn, .btn-group-vertical > .btn-group > .submit, .btn-group-vertical > .btn-group > .button {
   float: none;
 }
 
 /* line 3246, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.btn-group-vertical > .btn + .btn, .btn-group-vertical > .submit + .btn, .btn-group-vertical > .btn + .submit, .btn-group-vertical > .submit + .submit,
+.btn-group-vertical > .btn + .btn, .btn-group-vertical > .submit + .btn, .btn-group-vertical > .button + .btn, .btn-group-vertical > .btn + .submit, .btn-group-vertical > .submit + .submit, .btn-group-vertical > .button + .submit, .btn-group-vertical > .btn + .button, .btn-group-vertical > .submit + .button, .btn-group-vertical > .button + .button,
 .btn-group-vertical > .btn + .btn-group,
 .btn-group-vertical > .submit + .btn-group,
+.btn-group-vertical > .button + .btn-group,
 .btn-group-vertical > .btn-group + .btn,
 .btn-group-vertical > .btn-group + .submit,
+.btn-group-vertical > .btn-group + .button,
 .btn-group-vertical > .btn-group + .btn-group {
   margin-top: -1px;
   margin-left: 0;
 }
 
 /* line 3250, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.btn-group-vertical > .btn:not(:first-child):not(:last-child), .btn-group-vertical > .submit:not(:first-child):not(:last-child) {
+.btn-group-vertical > .btn:not(:first-child):not(:last-child), .btn-group-vertical > .submit:not(:first-child):not(:last-child), .btn-group-vertical > .button:not(:first-child):not(:last-child) {
   border-radius: 0;
 }
 
 /* line 3253, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.btn-group-vertical > .btn:first-child:not(:last-child), .btn-group-vertical > .submit:first-child:not(:last-child) {
+.btn-group-vertical > .btn:first-child:not(:last-child), .btn-group-vertical > .submit:first-child:not(:last-child), .btn-group-vertical > .button:first-child:not(:last-child) {
   border-top-right-radius: 4px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 
 /* line 3258, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.btn-group-vertical > .btn:last-child:not(:first-child), .btn-group-vertical > .submit:last-child:not(:first-child) {
+.btn-group-vertical > .btn:last-child:not(:first-child), .btn-group-vertical > .submit:last-child:not(:first-child), .btn-group-vertical > .button:last-child:not(:first-child) {
   border-bottom-left-radius: 4px;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
 
 /* line 3263, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .submit {
+.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .submit, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .button {
   border-radius: 0;
 }
 
 /* line 3267, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > .submit:last-child,
+.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > .submit:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > .button:last-child,
 .btn-group-vertical > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 
 /* line 3271, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > .submit:first-child {
+.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > .submit:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > .button:first-child {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
@@ -4845,7 +4889,7 @@ input[type="button"].btn-block {
 }
 
 /* line 3282, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.btn-group-justified > .btn, .btn-group-justified > .submit,
+.btn-group-justified > .btn, .btn-group-justified > .submit, .btn-group-justified > .button,
 .btn-group-justified > .btn-group {
   float: none;
   display: table-cell;
@@ -4853,14 +4897,15 @@ input[type="button"].btn-block {
 }
 
 /* line 3287, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.btn-group-justified > .btn-group .btn, .btn-group-justified > .btn-group .submit {
+.btn-group-justified > .btn-group .btn, .btn-group-justified > .btn-group .submit, .btn-group-justified > .btn-group .button {
   width: 100%;
 }
 
 /* line 3291, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-[data-toggle="buttons"] > .btn > input[type="radio"], [data-toggle="buttons"] > .submit > input[type="radio"],
+[data-toggle="buttons"] > .btn > input[type="radio"], [data-toggle="buttons"] > .submit > input[type="radio"], [data-toggle="buttons"] > .button > input[type="radio"],
 [data-toggle="buttons"] > .btn > input[type="checkbox"],
-[data-toggle="buttons"] > .submit > input[type="checkbox"] {
+[data-toggle="buttons"] > .submit > input[type="checkbox"],
+[data-toggle="buttons"] > .button > input[type="checkbox"] {
   display: none;
 }
 
@@ -4891,7 +4936,8 @@ input[type="button"].btn-block {
 .input-group-lg > .form-control,
 .input-group-lg > .input-group-addon,
 .input-group-lg > .input-group-btn > .btn,
-.input-group-lg > .input-group-btn > .submit {
+.input-group-lg > .input-group-btn > .submit,
+.input-group-lg > .input-group-btn > .button {
   height: 64px;
   padding: 18px 27px;
   font-size: 19px;
@@ -4903,7 +4949,8 @@ input[type="button"].btn-block {
 select.input-group-lg > .form-control,
 select.input-group-lg > .input-group-addon,
 select.input-group-lg > .input-group-btn > .btn,
-select.input-group-lg > .input-group-btn > .submit {
+select.input-group-lg > .input-group-btn > .submit,
+select.input-group-lg > .input-group-btn > .button {
   height: 64px;
   line-height: 64px;
 }
@@ -4913,10 +4960,12 @@ textarea.input-group-lg > .form-control,
 textarea.input-group-lg > .input-group-addon,
 textarea.input-group-lg > .input-group-btn > .btn,
 textarea.input-group-lg > .input-group-btn > .submit,
+textarea.input-group-lg > .input-group-btn > .button,
 select[multiple].input-group-lg > .form-control,
 select[multiple].input-group-lg > .input-group-addon,
 select[multiple].input-group-lg > .input-group-btn > .btn,
-select[multiple].input-group-lg > .input-group-btn > .submit {
+select[multiple].input-group-lg > .input-group-btn > .submit,
+select[multiple].input-group-lg > .input-group-btn > .button {
   height: auto;
 }
 
@@ -4924,7 +4973,8 @@ select[multiple].input-group-lg > .input-group-btn > .submit {
 .input-group-sm > .form-control,
 .input-group-sm > .input-group-addon,
 .input-group-sm > .input-group-btn > .btn,
-.input-group-sm > .input-group-btn > .submit {
+.input-group-sm > .input-group-btn > .submit,
+.input-group-sm > .input-group-btn > .button {
   height: 33px;
   padding: 6px 9px;
   font-size: 13px;
@@ -4936,7 +4986,8 @@ select[multiple].input-group-lg > .input-group-btn > .submit {
 select.input-group-sm > .form-control,
 select.input-group-sm > .input-group-addon,
 select.input-group-sm > .input-group-btn > .btn,
-select.input-group-sm > .input-group-btn > .submit {
+select.input-group-sm > .input-group-btn > .submit,
+select.input-group-sm > .input-group-btn > .button {
   height: 33px;
   line-height: 33px;
 }
@@ -4946,10 +4997,12 @@ textarea.input-group-sm > .form-control,
 textarea.input-group-sm > .input-group-addon,
 textarea.input-group-sm > .input-group-btn > .btn,
 textarea.input-group-sm > .input-group-btn > .submit,
+textarea.input-group-sm > .input-group-btn > .button,
 select[multiple].input-group-sm > .form-control,
 select[multiple].input-group-sm > .input-group-addon,
 select[multiple].input-group-sm > .input-group-btn > .btn,
-select[multiple].input-group-sm > .input-group-btn > .submit {
+select[multiple].input-group-sm > .input-group-btn > .submit,
+select[multiple].input-group-sm > .input-group-btn > .button {
   height: auto;
 }
 
@@ -5013,13 +5066,17 @@ select[multiple].input-group-sm > .input-group-btn > .submit {
 .input-group-addon:first-child,
 .input-group-btn:first-child > .btn,
 .input-group-btn:first-child > .submit,
+.input-group-btn:first-child > .button,
 .input-group-btn:first-child > .btn-group > .btn,
 .input-group-btn:first-child > .btn-group > .submit,
+.input-group-btn:first-child > .btn-group > .button,
 .input-group-btn:first-child > .dropdown-toggle,
 .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
 .input-group-btn:last-child > .submit:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:last-child > .button:not(:last-child):not(.dropdown-toggle),
 .input-group-btn:last-child > .btn-group:not(:last-child) > .btn,
-.input-group-btn:last-child > .btn-group:not(:last-child) > .submit {
+.input-group-btn:last-child > .btn-group:not(:last-child) > .submit,
+.input-group-btn:last-child > .btn-group:not(:last-child) > .button {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
@@ -5034,13 +5091,17 @@ select[multiple].input-group-sm > .input-group-btn > .submit {
 .input-group-addon:last-child,
 .input-group-btn:last-child > .btn,
 .input-group-btn:last-child > .submit,
+.input-group-btn:last-child > .button,
 .input-group-btn:last-child > .btn-group > .btn,
 .input-group-btn:last-child > .btn-group > .submit,
+.input-group-btn:last-child > .btn-group > .button,
 .input-group-btn:last-child > .dropdown-toggle,
 .input-group-btn:first-child > .btn:not(:first-child),
 .input-group-btn:first-child > .submit:not(:first-child),
+.input-group-btn:first-child > .button:not(:first-child),
 .input-group-btn:first-child > .btn-group:not(:first-child) > .btn,
-.input-group-btn:first-child > .btn-group:not(:first-child) > .submit {
+.input-group-btn:first-child > .btn-group:not(:first-child) > .submit,
+.input-group-btn:first-child > .btn-group:not(:first-child) > .button {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
@@ -5058,32 +5119,34 @@ select[multiple].input-group-sm > .input-group-btn > .submit {
 }
 
 /* line 3429, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.input-group-btn > .btn, .input-group-btn > .submit {
+.input-group-btn > .btn, .input-group-btn > .submit, .input-group-btn > .button {
   position: relative;
 }
 
 /* line 3432, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.input-group-btn > .btn + .btn, .input-group-btn > .submit + .btn, .input-group-btn > .btn + .submit, .input-group-btn > .submit + .submit {
+.input-group-btn > .btn + .btn, .input-group-btn > .submit + .btn, .input-group-btn > .button + .btn, .input-group-btn > .btn + .submit, .input-group-btn > .submit + .submit, .input-group-btn > .button + .submit, .input-group-btn > .btn + .button, .input-group-btn > .submit + .button, .input-group-btn > .button + .button {
   margin-left: -1px;
 }
 
 /* line 3437, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.input-group-btn > .btn:hover, .input-group-btn > .submit:hover,
+.input-group-btn > .btn:hover, .input-group-btn > .submit:hover, .input-group-btn > .button:hover,
 .input-group-btn > .btn:focus,
 .input-group-btn > .submit:focus,
+.input-group-btn > .button:focus,
 .input-group-btn > .btn:active,
-.input-group-btn > .submit:active {
+.input-group-btn > .submit:active,
+.input-group-btn > .button:active {
   z-index: 2;
 }
 
 /* line 3441, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.input-group-btn:first-child > .btn, .input-group-btn:first-child > .submit,
+.input-group-btn:first-child > .btn, .input-group-btn:first-child > .submit, .input-group-btn:first-child > .button,
 .input-group-btn:first-child > .btn-group {
   margin-right: -1px;
 }
 
 /* line 3445, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.input-group-btn:last-child > .btn, .input-group-btn:last-child > .submit,
+.input-group-btn:last-child > .btn, .input-group-btn:last-child > .submit, .input-group-btn:last-child > .button,
 .input-group-btn:last-child > .btn-group {
   margin-left: -1px;
 }
@@ -6238,7 +6301,7 @@ main > .navbar-collapse,
 }
 
 /* line 4280, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.btn .label, .submit .label {
+.btn .label, .submit .label, .button .label {
   position: relative;
   top: -1px;
 }
@@ -6331,7 +6394,7 @@ main > .navbar-collapse,
 }
 
 /* line 4343, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.btn .badge, .submit .badge {
+.btn .badge, .submit .badge, .button .badge {
   position: relative;
   top: -1px;
 }
@@ -7500,13 +7563,13 @@ button.close {
 }
 
 /* line 5167, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.modal-footer .btn + .btn, .modal-footer .submit + .btn, .modal-footer .btn + .submit, .modal-footer .submit + .submit {
+.modal-footer .btn + .btn, .modal-footer .submit + .btn, .modal-footer .button + .btn, .modal-footer .btn + .submit, .modal-footer .submit + .submit, .modal-footer .button + .submit, .modal-footer .btn + .button, .modal-footer .submit + .button, .modal-footer .button + .button {
   margin-left: 5px;
   margin-bottom: 0;
 }
 
 /* line 5171, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.modal-footer .btn-group .btn + .btn, .modal-footer .btn-group .submit + .btn, .modal-footer .btn-group .btn + .submit, .modal-footer .btn-group .submit + .submit {
+.modal-footer .btn-group .btn + .btn, .modal-footer .btn-group .submit + .btn, .modal-footer .btn-group .button + .btn, .modal-footer .btn-group .btn + .submit, .modal-footer .btn-group .submit + .submit, .modal-footer .btn-group .button + .submit, .modal-footer .btn-group .btn + .button, .modal-footer .btn-group .submit + .button, .modal-footer .btn-group .button + .button {
   margin-left: -1px;
 }
 
@@ -8032,7 +8095,7 @@ button.close {
 }
 
 /* line 5567, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.carousel-caption .btn, .carousel-caption .submit {
+.carousel-caption .btn, .carousel-caption .submit, .carousel-caption .button {
   text-shadow: none;
 }
 
@@ -8350,7 +8413,7 @@ section:after,
 }
 
 /* line 5797, /Users/sam/code/rails/innovacert/vendor/assets/stylesheets/flatly.scss */
-.btn:active, .submit:active {
+.btn:active, .submit:active, .button:active {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
@@ -8565,25 +8628,77 @@ input:focus {
   box-shadow: none;
 }
 
-/* line 5, /Users/sam/code/rails/innovacert/app/assets/stylesheets/framework_and_overrides.css.scss */
+/* line 8, /Users/sam/code/rails/innovacert/app/assets/stylesheets/framework_and_overrides.css.scss */
 img {
   margin: 0 auto;
 }
 
-/* line 10, /Users/sam/code/rails/innovacert/app/assets/stylesheets/framework_and_overrides.css.scss */
+/* line 13, /Users/sam/code/rails/innovacert/app/assets/stylesheets/framework_and_overrides.css.scss */
 .navbar-brand {
   font-size: inherit;
 }
 
+/* line 19, /Users/sam/code/rails/innovacert/app/assets/stylesheets/framework_and_overrides.css.scss */
+.control-label {
+  margin-right: 1em;
+}
+
+/* line 25, /Users/sam/code/rails/innovacert/app/assets/stylesheets/framework_and_overrides.css.scss */
+.nested-fields .field {
+  position: relative;
+  padding-bottom: 1em;
+}
+/* line 30, /Users/sam/code/rails/innovacert/app/assets/stylesheets/framework_and_overrides.css.scss */
+.nested-fields .form-group {
+  width: 90%;
+  margin-left: 2em;
+}
 /* line 35, /Users/sam/code/rails/innovacert/app/assets/stylesheets/framework_and_overrides.css.scss */
+.nested-fields .remove_fields {
+  position: absolute;
+  top: -0.3em;
+  font-size: 1.5em;
+  color: #e74c3c;
+}
+/* line 40, /Users/sam/code/rails/innovacert/app/assets/stylesheets/framework_and_overrides.css.scss */
+.nested-fields .remove_fields:hover {
+  color: #e74c3c;
+}
+/* line 45, /Users/sam/code/rails/innovacert/app/assets/stylesheets/framework_and_overrides.css.scss */
+.nested-fields .questions {
+  margin-left: 3em;
+}
+/* line 48, /Users/sam/code/rails/innovacert/app/assets/stylesheets/framework_and_overrides.css.scss */
+.nested-fields .questions a {
+  margin-left: 1.3em;
+}
+
+/* line 53, /Users/sam/code/rails/innovacert/app/assets/stylesheets/framework_and_overrides.css.scss */
+.add_fields {
+  display: block;
+  text-align: center;
+}
+
+/* line 80, /Users/sam/code/rails/innovacert/app/assets/stylesheets/framework_and_overrides.css.scss */
+.button {
+  margin: 1em;
+  float: left;
+}
+
+/* line 86, /Users/sam/code/rails/innovacert/app/assets/stylesheets/framework_and_overrides.css.scss */
+.alert {
+  margin-top: 10px;
+}
+
+/* line 91, /Users/sam/code/rails/innovacert/app/assets/stylesheets/framework_and_overrides.css.scss */
 main {
   background-color: #ddd;
   padding-bottom: 80px;
   width: 100%;
-  margin-top: 51px;
+  margin-top: 60px;
 }
 
-/* line 42, /Users/sam/code/rails/innovacert/app/assets/stylesheets/framework_and_overrides.css.scss */
+/* line 98, /Users/sam/code/rails/innovacert/app/assets/stylesheets/framework_and_overrides.css.scss */
 section {
   margin-top: 20px;
 }
