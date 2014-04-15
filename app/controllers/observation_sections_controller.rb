@@ -5,6 +5,11 @@ class ObservationSectionsController < ApplicationController
   end
 
   def update
+    if @observation_section.update(observation_section_params)
+      redirect_to edit_instrument_url(@instrument), notice: 'Section was successfully updated.'
+    else
+      render action: 'edit'
+    end
   end
 
   private

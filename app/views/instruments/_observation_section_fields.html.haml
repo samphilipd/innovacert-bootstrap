@@ -1,6 +1,6 @@
 .nested-fields
   .field
-    = link_to_remove_association "X", f
+    = link_to_remove_association "&times;".html_safe, f
     = f.text_area :name, label: 'Section:'
     .questions
       = render partial: 'observation_questions_view', :locals => {:observation_section => f.object, :show_edit => false }
