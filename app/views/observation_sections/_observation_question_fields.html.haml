@@ -1,0 +1,4 @@
+.nested-fields
+  .field
+    = link_to_remove_association "&times;".html_safe, f
+    = f.text_area :content, label: "Question #{f.object.question_number}"

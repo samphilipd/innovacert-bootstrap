@@ -1,0 +1,8 @@
+.nested-fields
+  .field
+    = link_to_remove_association "&times;".html_safe, f
+    = f.text_area :name, label: 'Section:'
+    .questions
+      = render partial: 'observation_questions_view', :locals => {:observation_section => f.object, :show_edit => false }
+      - unless f.object.id.nil? # cocoon creates newly instantiated observation_sections with no id for rendering purposes, only render edit_question links that actually exist
+        = link_to "&#9658; &nbsp; #{f.object.observation_questions.count > 0 ? "Edit" : "Add" } Questions".html_safe, edit_observation_section_path(f.object.id)
