@@ -1,0 +1,8 @@
+= bootstrap_form_for @observation_section do |f|
+  %h3 Questions
+  #observation_questions
+    = f.fields_for :observation_questions do |question|
+      = render 'observation_question_fields', f: question
+    .links
+      = link_to_add_association '- Add Question -', f, :observation_questions
+  = f.submit "Save Section"
