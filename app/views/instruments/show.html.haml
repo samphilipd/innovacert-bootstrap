@@ -13,9 +13,9 @@
     - else
       %strong Observation Sections
       %ol
-        - @instrument.observation_sections_ordered.each do |os|
-          %li= os.name
-          = render partial: 'observation_questions_view', locals: {os: os}
+        - @instrument.observation_sections_ordered.each do |observation_section|
+          %li= observation_section.name
+          = render partial: 'observation_questions_view', locals: {observation_section: observation_section}
 %section
   .column
     = button_to 'Edit Instrument', edit_instrument_path(@instrument), class: 'button', method: :get

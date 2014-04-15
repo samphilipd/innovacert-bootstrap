@@ -1,3 +1,4 @@
+=# binding.pry
 %ol
-  - os.observation_questions_ordered.each do |oq|
-    %li= oq.content
+  - observation_section.observation_questions.each do |observation_question|
+    %li= observation_question.content
