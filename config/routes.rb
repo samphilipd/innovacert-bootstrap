@@ -5,4 +5,5 @@ RailsBootstrap::Application.routes.draw do
   root :to => 'visitors#new'
 
   resources :instruments, only: [:new, :create, :show, :edit, :destroy, :update]
+  resources :observation_sections, only: [:edit, :update]
 end

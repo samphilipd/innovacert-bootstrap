@@ -23,7 +23,8 @@ img {
 .nested-fields {
 // allow absolute positioning inside field divs
   .field {
-    position: relative
+    position: relative;
+    padding-bottom: 1em;
   }
   // leave space for remove field X
   .form-group {
@@ -33,11 +34,19 @@ img {
   // put remove field X to the right of the field
   .remove_fields {
     position: absolute;
-    top: 0.3em;
+    top: -0.3em;
     font-size: 1.5em;
     color: $color-red;
     &:hover {
       color: $color-red;
+    }
+  }
+  // move question list to be indented
+  .questions {
+    margin-left: 3em;
+
+    a {
+      margin-left: 1.3em;
     }
   }
 }
