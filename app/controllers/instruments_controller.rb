@@ -12,7 +12,7 @@ class InstrumentsController < ApplicationController
   # PATCH/PUT /instruments/1
   def update
     if @instrument.update(instrument_params)
-      redirect_to @instrument, notice: 'Instrument was successfully updated.'
+      redirect_to instrument_url(@instrument), notice: 'Instrument was successfully updated.'
     else
       render action: 'edit'
     end
@@ -28,13 +28,7 @@ class InstrumentsController < ApplicationController
   # GET /instruments/new
   def new
     @instrument = Instrument.new
-    #TODO replace this hack with the ability to dynamically add/delete questions/sections,
-    # preferably using javascript
-    # consider cocoon?
-    3.times do
-      observation_section = @instrument.observation_sections.build # start with 3 empty section fields
-      4.times { observation_section.observation_questions.build }
-    end
+    @instrument.observation_sections.build # start with empty section field
   end
 
   # POST /instruments

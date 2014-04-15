@@ -4,5 +4,7 @@
     = f.text_area :name, label: 'Section:'
     .questions
       = render partial: 'observation_questions_view', :locals => {:observation_section => f.object, :show_edit => false }
-      - unless f.object.id.nil? # cocoon creates newly instantiated observation_sections with no id for rendering purposes, only render edit_question links that actually exist
+      - if f.object.id.nil? # FIXME this hack prevents adding of questions on new sections. cocoon creates newly instantiated observation_sections with no id for rendering purposes, only render edit_question links that actually exist
+        %i You must save the instrument before you can add questions to this section.
+      - else
         = link_to "&#9658; &nbsp; #{f.object.observation_questions.count > 0 ? "Edit" : "Add" } Questions".html_safe, edit_observation_section_path(f.object.id)

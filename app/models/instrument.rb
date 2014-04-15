@@ -1,6 +1,7 @@
 class Instrument < ActiveRecord::Base
   belongs_to :ucl
   has_many :observation_sections, dependent: :destroy
+  validates :name, presence: true
 
   accepts_nested_attributes_for :observation_sections, reject_if: lambda {|os| os[:name].blank?}, allow_destroy: true
 
