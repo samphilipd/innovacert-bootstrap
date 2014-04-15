@@ -1,6 +1,9 @@
 // import the CSS framework
 @import "flatly";
 
+// set color variables in sass, pulled from flatly.css
+$color-red: #E74C3C;
+
 // make all images responsive by default
 img {
   @extend .img-responsive;
@@ -11,10 +14,38 @@ img {
   font-size: inherit;
   }
 
+// Tweaks for bootstrap_form builder
 // Give labels some breathing space to the right before input field
 .control-label {
   margin-right: 1em;
 }
+// adjust appearance of dynamically nested fields.
+.nested-fields {
+// allow absolute positioning inside field divs
+  .field {
+    position: relative
+  }
+  // leave space for remove field X
+  .form-group {
+    width: 90%;
+    margin-left: 2em;
+  }
+  // put remove field X to the right of the field
+  .remove_fields {
+    position: absolute;
+    bottom: 0.3em;
+    font-size: 1.5em;
+    color: $color-red;
+    &:hover {
+      color: $color-red;
+    }
+  }
+}
+.add_fields {
+  display: block;
+  text-align: center;
+}
+
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create your own classes
 // to make views framework-neutral
