@@ -1,15 +1,12 @@
 = bootstrap_form_for @instrument do |f|
-  = f.select :ucl_id, options_for_select(Ucl.options_for_select), label: 'Select UCL for this instrument:'
-  =f.text_field :name, label: 'Instrument name:'
-  %h4 Observation Section
-  -# fixme does not allow questions to be added if none exist yet
-  -# TODO split into more partials
-  %ol
-    = f.fields_for :observation_sections, f.object.observation_sections_ordered do |builder|
-      %li
-        = builder.text_field :name, rows: 3, label: 'Section name:'
-        = builder.check_box :_destroy, label: 'Remove Section:'
-        %ol
-          = render partial: 'observation_questions_fields', locals: {f: builder}
-  %p
-    = f.submit "Save Instrument"
+  .field
+    = f.select :ucl_id, options_for_select(Ucl.options_for_select), label: 'Select UCL for this instrument:'
+  .field
+    = f.text_field :name, label: 'Instrument name:'
+  %h3 Observation
+  #observation_sections
+    = f.fields_for :observation_sections do |section|
+      = render 'observation_section_fields', f: section
+    .links
+      = link_to_add_association 'add section', f, :observation_sections
+  = f.submit "Save Instrument"

@@ -15,6 +15,8 @@ gem 'figaro', github: 'laserlemon/figaro', ref: "9bbc7343f3916e73c185d071608e5ef
 gem 'bootstrap_form'
 # I18n support
 gem 'i18n'
+# Easier nested forms
+gem 'cocoon'
 
 group :development do
   gem 'pry'
