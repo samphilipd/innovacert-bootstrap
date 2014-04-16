@@ -1,5 +1,5 @@
 class ObservationSection < ActiveRecord::Base
-  belongs_to :instrument
+  belongs_to :instrument, inverse_of: :observation_sections
   has_many :observation_questions, dependent: :destroy
   accepts_nested_attributes_for :observation_questions, reject_if: lambda {|oq| oq[:content].blank?}, allow_destroy: true
 
