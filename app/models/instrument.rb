@@ -7,8 +7,9 @@ class Instrument < ActiveRecord::Base
   validates :name, presence: true
   validates :ucl, presence: true  # all instruments must be related to a valid and real UCL
 
-  ## Explicitly allow setting of observation_section attributes (i.e. observation_questions) through nesting on this model
+  ## Explicitly allow setting of observation_section attributes (i.e. observation_questions and interview_questions) through nesting on this model
   accepts_nested_attributes_for :observation_sections, reject_if: lambda {|os| os[:name].blank?}, allow_destroy: true
+  accepts_nested_attributes_for :interview_sections, reject_if: lambda {|is| is[:name].blank?}, allow_destroy: true
 
   # TODO adding proper numbering support in a helper method makes more sense
 end
