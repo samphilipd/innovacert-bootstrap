@@ -1,0 +1,16 @@
+-# This form works with JS disabled in the browser
+= bootstrap_form_for @instrument do |f|
+  .form-section
+    = f.select :ucl_id, options_for_select(Ucl.options_for_select), label: 'Select UCL for this instrument:'
+    = f.text_field :name, label: 'Instrument name:'
+  %h3 Observation
+  .form-section
+    = f.fields_for :observation_sections, @observation_sections do |section_f|
+      = render 'observation_section_fields', f: section_f
+    = link_to '- Add Observation Section -', edit_instrument_path(id: @instrument.id, _add_observation_section: true)
+  %h3 Interview
+  .form-section
+    = f.fields_for :interview_sections, @interview_sections do |section_f|
+      = render 'interview_section_fields', f: section_f
+    = link_to '- Add Interview Section -', edit_instrument_path(id: @instrument.id, _add_interview_section: true)
+  = f.submit

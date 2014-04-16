@@ -10,6 +10,12 @@ class InstrumentsController < ApplicationController
   # todo if client has Javascript (option set client-side), render x, else render y (non-javascript form available)
   # default rendering is JS enabled
   def edit
+    @js_form = false
+    @instrument.add_blank_observation_section if params[:_add_observation_section]
+    @instrument.add_blank_interview_section if params[:_add_interview_section]
+    respond_to do |format|
+      format.html
+    end
   end
 
   # PATCH/PUT /instruments/1

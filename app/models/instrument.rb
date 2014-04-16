@@ -12,4 +12,12 @@ class Instrument < ActiveRecord::Base
   accepts_nested_attributes_for :interview_sections, reject_if: lambda {|is| is[:name].blank?}, allow_destroy: true
 
   # TODO adding proper numbering support in a helper method makes more sense
+  #
+
+  def add_blank_observation_section
+    observation_sections.create(name: "...")
+  end
+  def add_blank_interview_section
+    interview_sections.create(name: "...")
+  end
 end

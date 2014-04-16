@@ -37,6 +37,11 @@ img {
   border-radius: 1em;
   border-color: #999999;
   box-shadow: 0.25em 0.25em 0.25em #555555;
+
+  a {
+    display: block;
+    text-align: center;
+  }
 }
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create your own classes
