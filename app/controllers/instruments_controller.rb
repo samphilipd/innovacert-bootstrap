@@ -36,7 +36,7 @@ class InstrumentsController < ApplicationController
     @instrument = Instrument.new(instrument_params)
     respond_to do |format|
       if @instrument.save
-        format.html { redirect_to root_url, notice: "Instrument created successfully!" }
+        format.html { redirect_to instrument_url(@instrument), notice: "Instrument created successfully!" }
       else
         format.html { render action: :new }
       end
