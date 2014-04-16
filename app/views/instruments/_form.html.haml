@@ -5,7 +5,7 @@
     = f.text_field :name, label: 'Instrument name:'
   %h3 Observation
   #observation_sections
-    = f.fields_for :observation_sections, f.object.observation_sections_ordered do |section|
+    = f.fields_for :observation_sections, f.object.observation_sections do |section|
       = render 'observation_section_fields', f: section
     .links
       = link_to_add_association '- Add Section -', f, :observation_sections

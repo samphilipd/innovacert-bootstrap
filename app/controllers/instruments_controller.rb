@@ -1,5 +1,6 @@
 class InstrumentsController < ApplicationController
   before_action :set_instrument, only: [:edit, :show, :destroy, :update]
+  before_action :set_sections, only: [:show]
 
   # GET /instruments/1
   def show
@@ -51,5 +52,10 @@ class InstrumentsController < ApplicationController
 
   def set_instrument
     @instrument = Instrument.find(params[:id])
+  end
+
+  def set_sections
+    @observation_sections = ObservationSection.where(:instrument_id => params[:id]).order(id: :asc)
+    @interview_sections = InterviewSection.where(:instrument_id => params[:id]).order(id: :asc)
   end
 end

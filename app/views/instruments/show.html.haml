@@ -12,10 +12,15 @@
       %strong No Observation Sections
     - else
       %strong Observation Sections
-      %ol
-        - @instrument.observation_sections_ordered.each do |observation_section|
+      %ol{type: "A"}
+        - @observation_sections.each do |observation_section|
           %li= observation_section.name
           = render partial: 'observation_questions_view', locals: {observation_section: observation_section}
+      %strong Interview Sections
+      %ol{type: "A"}
+        - @interview_sections.each do |interview_section|
+          %li= interview_section.name
+          = render partial: 'interview_questions_view', locals: {interview_section: interview_section}
 %section
   .column
     = button_to 'Edit Instrument', edit_instrument_path(@instrument), class: 'button', method: :get

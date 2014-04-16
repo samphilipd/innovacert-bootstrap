@@ -1,0 +1,5 @@
+%ol
+  - interview_section.interview_questions.each do |interview_question|
+    %li= interview_question.question_content
+    %ul
+      %li= content_tag(:i, "#{interview_question.sample_answer}")

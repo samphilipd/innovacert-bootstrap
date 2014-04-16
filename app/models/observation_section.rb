@@ -10,9 +10,5 @@ class ObservationSection < ActiveRecord::Base
   ## Explicitly allow setting of observation_questions attributes (i.e. observation_question content fields) through nesting on this model
   accepts_nested_attributes_for :observation_questions, reject_if: lambda {|oq| oq[:content].blank?}, allow_destroy: true
 
-  # FIXME this is a hack and should not be necessary. Remove the method below and 
-  # implement proper number ordering for questions in a helper method
-  def observation_questions_ordered
-    observation_questions.reverse
-  end
+  # TODO implement proper number ordering for questions in a helper method
 end
