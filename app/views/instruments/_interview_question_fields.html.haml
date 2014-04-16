@@ -1,4 +1,5 @@
 .form-question
-  = f.text_area :question_content, label: 'Question' # TODO change to show question number
+  = f.text_field :question_content, label: 'Question' # TODO change to show question number
+  = f.text_field :sample_answer, label: 'Answer'
   = f.check_box :_destroy, label: 'Remove Question'
 
