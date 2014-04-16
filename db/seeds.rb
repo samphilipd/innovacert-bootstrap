@@ -60,14 +60,27 @@ rodrigo.ucls << Ucl.where(code: ['MT001', 'MPSO003', 'MPSO002'])
 Instrument.destroy_all
 
 instrument = Ucl.find_by(code: 'MT001').instruments.create!(name: 'Instrumento para MT001')
+
 s1 = ObservationSection.new(name: "Perform pre-operational check of equipment, checking wear elements, structures, tires and components, technical specifications, standards and procedures", section_number: 1)
 s1.observation_questions << ObservationQuestion.new(content: "Question 1")
 s1.observation_questions << ObservationQuestion.new(content: "Question 2")
 instrument.observation_sections << s1
 
+i1 = InterviewSection.new(name: "Perform pre-operational check of equipment, checking wear elements, structures, tires and components, technical specifications", section_number: 1)
+i1.interview_questions << InterviewQuestion.new(question_content: "Question 1", question_number: 1, sample_answer: "Answer 1")
+i1.interview_questions << InterviewQuestion.new(question_content: "Question 2", question_number: 2, sample_answer: "Answer 2")
+instrument.interview_sections << i1
+
 s2 = ObservationSection.new(name: "Ensures information regarding the work to be performed (type of work and areas) with the head of sector, according to company procedures", section_number: 2)
 s2.observation_questions << ObservationQuestion.new(content: "Question 1")
 instrument.observation_sections << s2
 
+i2 = InterviewSection.new(name: "Ensures information regarding the work to be performed (type of work and areas) with the head of sector, according to company procedures", section_number: 2)
+i2.interview_questions << InterviewQuestion.new(question_content: "Question 1", question_number: 1, sample_answer: "Answer 1")
+instrument.interview_sections << i2
+
 s3 = ObservationSection.new(name: "It supplies fuel according to specific procedures of the company", section_number: 3)
 instrument.observation_sections << s3
+
+i3 = InterviewSection.new(name: "It supplies fuel according to specific procedures of the company", section_number: 3)
+instrument.interview_sections << i3
