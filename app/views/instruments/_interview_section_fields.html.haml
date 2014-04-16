@@ -1,11 +1,5 @@
-.nested-fields
-  .field
-    = link_to_remove_association "&times;".html_safe, f
-    = f.text_area :name, label: 'Section:'
-    .questions
-    -#
-      = render partial: 'interview_questions_view', locals: {interview_section: f.object, show_edit: false}
-      - if f.object.id.nil?
-        %i You must save the instrument before you can add questions to this section.
-      - else
-        = link_to "&#9658; &nbsp; #{f.object.observation_questions.count > 0 ? "Edit" : "Add" } Questions".html_safe, edit_observation_section_path(f.object.id)
+.form-section
+  = f.text_area :name, label: 'Section Name' # TODO change to show section number
+  = f.check_box :_destroy, label: 'Remove Question'
+  = f.fields_for :interview_questions do |question_f|
+    = render 'interview_question_fields', f: question_f

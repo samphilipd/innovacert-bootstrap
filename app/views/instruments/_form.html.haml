@@ -1,19 +1,11 @@
 = bootstrap_form_for @instrument do |f|
-  .field
+  .form-section
     = f.select :ucl_id, options_for_select(Ucl.options_for_select), label: 'Select UCL for this instrument:'
-  .field
     = f.text_field :name, label: 'Instrument name:'
-  -# FIXME DRY, remove duplicated code below by moving into a partial
   %h3 Observation
-  #observation_sections
-    = f.fields_for :observation_sections, @observation_sections do |section|
-      = render 'observation_section_fields', f: section
-    .links
-      = link_to_add_association '- Add Section -', f, :observation_sections
+  = f.fields_for :observation_sections, @observation_sections do |section_f|
+    = render 'observation_section_fields', f: section_f
   %h3 Interview
-  #interview_sections
-    = f.fields_for :interview_sections, @interview_sections do |section|
-      = render 'interview_section_fields', f: section
-    .links
-      = link_to_add_association '- Add Section -', f, :interview_sections
-  = f.submit "Save Instrument"
+  = f.fields_for :interview_sections, @interview_sections do |section_f|
+    = render 'interview_section_fields', f: section_f
+  = f.submit

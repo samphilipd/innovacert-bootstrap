@@ -1,5 +1,7 @@
 // import the CSS framework
 @import "flatly";
+// import form styling
+@import "rails_bootstrap_forms";
 
 // set color variables in sass, pulled from flatly.css
 $color-red: #E74C3C;
@@ -19,47 +21,28 @@ img {
 .control-label {
   margin-right: 1em;
 }
-// adjust appearance of dynamically nested fields.
-.nested-fields {
-// allow absolute positioning inside field divs
-  .field {
-    position: relative;
-    padding-bottom: 1em;
-  }
-  // leave space for remove field X
-  .form-group {
-    width: 90%;
-    margin-left: 2em;
-  }
-  // put remove field X to the right of the field
-  .remove_fields {
-    position: absolute;
-    top: -0.3em;
-    font-size: 1.5em;
-    color: $color-red;
-    &:hover {
-      color: $color-red;
-    }
-  }
-  // move question list to be indented
-  .questions {
-    margin-left: 3em;
 
-    a {
-      margin-left: 1.3em;
-    }
-  }
+.form-question {
+  border: 1px dotted;
+  border-radius: 0.5em;
+  border-color: #aaaaaa;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 3em;
+  padding: 1em;
 }
-.add_fields {
-  display: block;
-  text-align: center;
+.form-section {
+  @extend .form-question;
+  border: 1px solid;
+  border-radius: 1em;
+  border-color: #999999;
+  box-shadow: 0.25em 0.25em 0.25em #555555;
 }
-
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create your own classes
 // to make views framework-neutral
 .column {
-  @extend .col-md-6
+  @extend .col-md-6;
 }
 .column-centered {
   @extend .col-md-6;

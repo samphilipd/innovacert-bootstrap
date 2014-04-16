@@ -12,11 +12,11 @@ gem 'haml-rails'
 gem 'high_voltage'
 gem 'pg'
 gem 'figaro', github: 'laserlemon/figaro', ref: "9bbc7343f3916e73c185d071608e5ef24e9638d0" # specific version needed for compatibility with rails 4.10.rc2
-gem 'rails-bootstrap-forms'
+# nested JS forms with bootstrap integration
+gem 'bootstrap_form', github: 'bootstrap-ruby/rails-bootstrap-forms' # latest version needed for nesting support
+gem 'nested_form'
 # I18n support
 gem 'i18n'
-# Easier nested forms
-# gem 'cocoon'
 
 group :development do
   gem 'pry'

@@ -1,12 +1,14 @@
 class InstrumentsController < ApplicationController
   before_action :set_instrument, only: [:edit, :show, :destroy, :update]
-  before_action :set_sections, only: [:show]
+  before_action :set_sections, only: [:show, :edit, :new]
 
   # GET /instruments/1
   def show
   end
 
   # GET /instruments/1/edit
+  # todo if client has Javascript (option set client-side), render x, else render y (non-javascript form available)
+  # default rendering is JS enabled
   def edit
   end
 
