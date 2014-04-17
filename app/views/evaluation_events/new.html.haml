@@ -1,2 +1,6 @@
-%h1 EvaluationEvents#new
-%p Find me in app/views/evaluation_events/new.html.haml
+%h3 Start a new evaluation
+= bootstrap_form_for @evaluation_event do |f|
+  = f.select :instrument_id, options_for_select(Instrument.options_for_select)
+  =# f.select :worker_id
+  = f.date_select :evaluation_date
+  = f.submit

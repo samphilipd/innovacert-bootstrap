@@ -38,4 +38,8 @@ class Instrument < ActiveRecord::Base
   def add_blank_interview_section
     interview_sections.create(name: "...")
   end
+
+  def self.options_for_select
+    Instrument.all.map{|s| [s.name]}
+  end
 end
