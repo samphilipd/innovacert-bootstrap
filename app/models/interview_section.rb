@@ -9,4 +9,17 @@ class InterviewSection < ActiveRecord::Base
 
   ## Explicitly allow setting of observation_questions attributes (i.e. observation_question content fields) through nesting on this model
   accepts_nested_attributes_for :interview_questions, reject_if: lambda {|iq| iq[:content].blank?}, allow_destroy: true
+  #
+  ## Allow controller to pass switches to add an extra question
+  def _add_question=(switch)
+    self.add_blank_question if switch == "1"
+  end
+  def _add_question
+    # default is to NOT add a question
+    "0"
+  end
+  def add_blank_question
+    interview_questions.create(question_content: "...", sample_answer: "...")
+  end
+
 end

@@ -3,3 +3,4 @@
   = f.check_box :_destroy, label: 'Remove Section'
   = f.fields_for :interview_questions do |question_f|
     = render 'interview_question_fields', f: question_f
+    = f.check_box :_add_question, label: 'Add Question'

@@ -11,4 +11,16 @@ class ObservationSection < ActiveRecord::Base
   accepts_nested_attributes_for :observation_questions, reject_if: lambda {|oq| oq[:content].blank?}, allow_destroy: true
 
   # TODO implement proper number ordering for questions in a helper method
+
+  ## Allow controller to pass switches to add an extra question
+  def _add_question=(switch)
+    self.add_blank_question if switch == "1"
+  end
+  def _add_question
+    # default is to NOT add a question
+    "0"
+  end
+  def add_blank_question
+    observation_questions.create(content: "...")
+  end
 end
