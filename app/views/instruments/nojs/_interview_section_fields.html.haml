@@ -2,5 +2,5 @@
   = f.text_area :name, label: 'Section Name' # TODO change to show section number
   = f.check_box :_destroy, label: 'Remove Section'
   = f.fields_for :interview_questions do |question_f|
-    = render 'interview_question_fields', f: question_f
-    = f.check_box :_add_question, label: 'Add Question'
+    = render 'instruments/nojs/interview_question_fields', f: question_f
+  = f.check_box :_add_question, label: 'Add Question'
