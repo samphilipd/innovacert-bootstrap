@@ -1,5 +1,7 @@
 class Instrument < ActiveRecord::Base
   belongs_to :ucl
+  has_many :evaluation_events, inverse_of: :instrument
+
   has_many :observation_sections, inverse_of: :instrument, dependent: :destroy
   has_many :interview_sections, inverse_of: :instrument, dependent: :destroy
 

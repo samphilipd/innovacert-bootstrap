@@ -1,5 +1,6 @@
 class Worker < ActiveRecord::Base
   has_and_belongs_to_many :ucls
+  has_many :evaluation_events, inverse_of: :worker
 
   ## VALIDATIONS
   validates :name, presence: true

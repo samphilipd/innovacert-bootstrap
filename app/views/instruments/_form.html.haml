@@ -1,0 +1,6 @@
+= bootstrap_nested_form_for @instrument do |f|
+  .form-section
+    = f.select :ucl_id, options_for_select(Ucl.options_for_select), label: 'Select UCL for this instrument:'
+    = f.text_field :name, label: 'Instrument name:'
+    = f.fields_for :observation_sections do |section_f|
+      = section_f.text_area :name, label: "Section #X"

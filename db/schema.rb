@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140416154128) do
+ActiveRecord::Schema.define(version: 20140417155719) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "evaluation_events", force: true do |t|
+    t.integer  "instrument_id"
+    t.integer  "worker_id"
+    t.datetime "evaluation_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "evaluation_events", ["instrument_id"], name: "index_evaluation_events_on_instrument_id", using: :btree
+  add_index "evaluation_events", ["worker_id"], name: "index_evaluation_events_on_worker_id", using: :btree
 
   create_table "instruments", force: true do |t|
     t.string   "name"

@@ -6,4 +6,5 @@ RailsBootstrap::Application.routes.draw do
 
   resources :instruments, only: [:new, :create, :show, :edit, :destroy, :update]
   resources :observation_sections, only: [:edit, :update]
+  resources :evaluation_events, only: [:new]
 end

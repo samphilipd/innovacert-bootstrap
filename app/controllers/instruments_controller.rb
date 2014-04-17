@@ -1,7 +1,8 @@
 class InstrumentsController < ApplicationController
+  attr_accessor :no_js
   before_action :set_instrument, only: [:edit, :show, :destroy, :update]
   before_action :set_sections, only: [:show, :edit, :new]
-  attr_accessor :no_js
+  before_action :set_no_js, only: [:edit, :new] # TODO implement JS version so we can turn this off by default
 
   # GET /instruments/1
   def show
@@ -11,7 +12,6 @@ class InstrumentsController < ApplicationController
   # todo if client has Javascript (option set client-side), render x, else render y (non-javascript form available)
   # default rendering is JS enabled
   def edit
-    @no_js = true
     respond_to do |format|
       format.html
     end
@@ -68,5 +68,9 @@ class InstrumentsController < ApplicationController
   def set_sections
     @observation_sections = ObservationSection.where(:instrument_id => params[:id]).order(id: :asc)
     @interview_sections = InterviewSection.where(:instrument_id => params[:id]).order(id: :asc)
+  end
+
+  def set_no_js
+    @no_js = true
   end
 end
