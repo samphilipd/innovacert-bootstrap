@@ -2,7 +2,7 @@
 
 %section
 .form
-  - if @js_form
-    = render 'form'
-  - else
+  - if @no_js
     = render 'form_nojs'
+  - else
+    = render 'form'

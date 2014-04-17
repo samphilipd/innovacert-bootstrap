@@ -1,6 +1,7 @@
 class InstrumentsController < ApplicationController
   before_action :set_instrument, only: [:edit, :show, :destroy, :update]
   before_action :set_sections, only: [:show, :edit, :new]
+  attr_accessor :no_js
 
   # GET /instruments/1
   def show
@@ -10,9 +11,7 @@ class InstrumentsController < ApplicationController
   # todo if client has Javascript (option set client-side), render x, else render y (non-javascript form available)
   # default rendering is JS enabled
   def edit
-    @js_form = false
-    @instrument.add_blank_observation_section if params[:_add_observation_section]
-    @instrument.add_blank_interview_section if params[:_add_interview_section]
+    @no_js = true
     respond_to do |format|
       format.html
     end
@@ -55,7 +54,11 @@ class InstrumentsController < ApplicationController
   private
   # Never trust parameters from the scary internet, only allow the white list through.
   def instrument_params
-    params.require(:instrument).permit(:name, :ucl_id, observation_sections_attributes: [:id, :name, :_destroy], interview_sections_attributes: [:id, :name, :_destroy])
+    params.require(:instrument).permit(:name, :ucl_id, :_add_observation_section, :_add_interview_section,
+                                       observation_sections_attributes: [:id, :name, :_destroy,
+                                                                         observation_questions_attributes: [:id, :content, :_destroy]],
+                                       interview_sections_attributes: [:id, :name, :_destroy,
+                                                                       interview_questions_attributes: [:question_content, :sample_answer, :id, :_destroy]])
   end
 
   def set_instrument
