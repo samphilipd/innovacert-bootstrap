@@ -18,9 +18,9 @@ gem 'nested_form'
 # I18n support
 gem 'i18n'
 
-group :development do
+group :development, :test do
   gem 'pry'
-  gem 'rspec'
+  gem 'rspec-rails', '~> 3.0.0.beta'
   gem 'factory_girl'
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :mri_21, :rbx]

@@ -39,11 +39,10 @@ class RutValidator < ActiveModel::Validator
 
       total = digits.sum
       rest = 11 - (total % 11)
-      if (rest != 10) and (control_char == "k")
-        record.errors[:rut] << "failed algorithm verification"
-      elsif (rest != 11) and (control_char == 0)
-        record.errors[:rut] << "failed algorithm verification"
-      elsif rest.between?(1,9) and (rest != control_char)
+      if ((rest == 10) and (control_char == "k")) or ((rest == 11) and (control_char == 0)) or (rest.between?(1,9) and (rest == control_char))
+        # everything ok
+      else
+        # failed validation
         record.errors[:rut] << "failed algorithm verification"
       end
     end

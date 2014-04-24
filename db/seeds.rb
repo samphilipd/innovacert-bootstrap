@@ -35,19 +35,19 @@ Ucl.create!(code: 'MPSO004',
 # Seed example workers
 Worker.destroy_all
 pedro = Worker.create!(name: 'Pedro',
-                       rut: '123456789',
+                       rut: '306869574',
                        email_address: 'pedro@example.com')
 # pedro is a certified operador
 pedro.ucls << Ucl.where(code: ['MPSO001', 'MT001']) #TODO replace these with collections of UCLs in profiles
 
 felipe = Worker.create!(name: 'Felipe',
-                       rut: '223456789',
+                       rut: '334441113',
                        email_address: 'felipe@example.com')
 #felipe is a new miner with no specializations yet
 felipe.ucls << Ucl.find_by(code: 'MT001') # basic mining safety
 
 rodrigo = Worker.create!(name: 'Rodrigo',
-                       rut: '323456789',
+                       rut: '12345684k',
                        email_address: 'rodrigo@example.com')
 # rodrigo is pedro's assistant and a certified ayudante
 rodrigo.ucls << Ucl.where(code: ['MT001', 'MPSO003', 'MPSO002'])
